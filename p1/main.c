@@ -1,30 +1,27 @@
 #include <stdio.h>
 
 int main(void) {
-    int x = 10;
-    char arr[x];
-    char *ptr = arr;
+    char arr[10];
     
-    for(int i = 0; i < x; i++) {
-        scanf(" %c", (ptr + i));
+    for(int i = 0; i < 10; i++) {
+        scanf(" %c", &arr[i]); 
     }
     
     char max_char;
     int max_count = 0;
     
-    for(int i = 0; i < x; i++) {
-        char current_char = *(ptr + i);
+    for (char *p = arr; p < arr + 10; p++) {
         int current_count = 0;
         
-        for(int j = 0; j < x; j++) {
-            if(*(ptr + j) == current_char) {
+        for (char *q = arr; q < arr + 10; q++) {
+            if (*p == *q) {
                 current_count++;
             }
         }
         
         if(current_count > max_count) {
             max_count = current_count;
-            max_char = current_char;
+            max_char = *p;
         }
     }
   
