@@ -23,9 +23,9 @@ int main(void) {
         }
         
         if(current_count > max_count) {
-                max_count = current_count;
-                max_char = current_char;
-            }
+            max_count = current_count;
+            max_char = current_char;
+        }
     }
   
     printf("%c %d", max_char, max_count);
